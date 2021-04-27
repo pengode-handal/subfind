@@ -33,18 +33,18 @@ SubDomain Finder Scanner With CLI
 
 # Usage
 
-
+<p>for help</p>
 
 - ```bash
   $ python3 run.py -h/--help
   ```
 
-
+<p>for see the version</p>
 
 - ```bash
   $ python3 run.py -v/--version
   ```
-
+<p>for scanning the web</p>
 
 - ```bash
   $ python3 run.py -d/--domain [the domain]
@@ -52,7 +52,7 @@ SubDomain Finder Scanner With CLI
   $ python3 run.py -d google.com
   ```
 
-
+<p>for scanning the web and save the result in the file</p>
 
 - ```bash
   $ python3 run.py -d/--domain [the domain] -s/--save [filename]
