@@ -27,19 +27,19 @@ SubDomain Finder Scanner With CLI
 
 # Usage
 
-<p> show helper</p>
+
 
 - ```bash
   $ python3 run.py -h/--help
   ```
 
 
-<p> show version </p>
+
 - ```bash
   $ python3 run.py -v/--version
   ```
 
-<p> scan a domain</p>
+
 - ```bash
   $ python3 run.py -d/--domain [the domain]
   Example
@@ -47,7 +47,7 @@ SubDomain Finder Scanner With CLI
   ```
 
 
-<p>scan the domain and save the result</p>
+
 - ```bash
   $ python3 run.py -d/--domain [the domain] -s/--save [filename]
   Example
