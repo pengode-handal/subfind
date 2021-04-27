@@ -59,5 +59,3 @@ SubDomain Finder Scanner With CLI
   Example
   $ python3 run.py -d google.com -s result
   ```
-
-## Note: When usage save, dont use .txt, .html, .php, .py, etc
