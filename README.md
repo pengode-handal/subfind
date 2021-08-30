@@ -20,7 +20,7 @@ SubDomain Finder Scanner With CLI
   ```
 
 - ```bash
-  $ git clone https://github.com/BabwaXgura/subfind
+  $ git clone https://github.com/pengode-handal/subfind
   ```
 
 - ```bash
