@@ -33,6 +33,7 @@ def main():
   
   parser = ArgumentParser()
   parser.add_argument("-d", "--domain", help="domain (dont use http/https)")
+  parser.add_argument('-l', '--list', metavar='List File Name', help='SUBDOMAIN FINDER MASS SCAN')
   parser.add_argument("-s", "--save", help="input the filename")
   parser.add_argument("-v", "--version", action="version", version="SubDomain Scanner Tool V1.1.0")
   args = parser.parse_args()
@@ -40,7 +41,7 @@ def main():
   def ngk():
     print("[+] Ya udh kalo ga mau di simpen")
   
-  pika = ("##########RESULT###########")
+  pika = ("")
   nma = ("")
   
   def logger(pika):
@@ -51,22 +52,46 @@ def main():
     
     
  
-  
-  nma = args.save
-  logger(pika)
+  if args.domain:
+    nma = args.save
+    logger(pika)
     
-  data = args.domain
-  api = "https://sonar.omnisint.io/subdomains/" + data
-  mulai = time.time()
-  pika = requests.get(api).json()
-  logger(pika)
-  print("##########{}RESULT{}{}###########".format(b, n, m))
-  for i in pika:
-    print(h + i)
-  stop = time.time()
-  be = int(stop - mulai)
-  print("\n{}butuh waktu {} detik untuk selesai".format(k, be))
-  sistem("rm -rf None.txt")
+    data = args.domain
+    api = "https://sonar.omnisint.io/subdomains/" + data
+    mulai = time.time()
+    pika = requests.get(api).json()
+    print("##########{}RESULT{}{}###########".format(b, n, m))
+    for i in pika:
+      print(h + i)
+      logger(i)
+    stop = time.time()
+    be = int(stop - mulai)
+    print("\n{}butuh waktu {} detik untuk selesai".format(k, be))
+    sistem("rm -rf None.txt")
   
+  if args.list:
+      nma = args.save
+      logger(pika)
+      
+      def getUrl(url):
+          urls = []
+          with open(url, "r") as ufile:
+              allurl = ufile.readlines()
+              for i in range(len(allurl)):
+                  urls.append(allurl[i].strip('\n'))
+              return urls 
+      file = getUrl(args.list)
+      print("##########{}RESULT{}{}###########".format(b, n, m))
+      for lists in file:
+        api = "https://sonar.omnisint.io/subdomains/" + lists
+        mulai = time.time()
+        pika = requests.get(api).json()
+        for i in pika:
+          print(b +"["+lists+"]:\n\n"+h+ i)
+          logger(i)
+        stop = time.time()
+        be = int(stop - mulai)
+      print("\n{}butuh waktu {} detik untuk selesai".format(k, be))
+      sistem("rm -rf None.txt")
 if __name__ == '__main__':
   main()
