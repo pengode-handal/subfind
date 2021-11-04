@@ -56,7 +56,7 @@ def main():
   logger(pika)
     
   data = args.domain
-  api = "http://jamet1337.ml/api/subdo.php?url=" + data
+  api = "https://sonar.omnisint.io/subdomains/" + data
   mulai = time.time()
   ngeload = requests.get(api)
   gura = json.loads(ngeload.text)
