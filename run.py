@@ -61,7 +61,8 @@ def main():
   pika = requests.get(api).json()
   logger(pika)
   print("##########{}RESULT{}{}###########".format(b, n, m))
-  print(h + pika)
+  for i in pika:
+    print(h + i)
   stop = time.time()
   be = int(stop - mulai)
   print("\n{}butuh waktu {} detik untuk selesai".format(k, be))
