@@ -58,9 +58,7 @@ def main():
   data = args.domain
   api = "https://sonar.omnisint.io/subdomains/" + data
   mulai = time.time()
-  ngeload = requests.get(api)
-  gura = json.loads(ngeload.text)
-  pika = gura['hasil']
+  pika = requests.get(api).json()
   logger(pika)
   print("##########{}RESULT{}{}###########".format(b, n, m))
   print(h + pika)
